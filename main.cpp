@@ -1,4 +1,6 @@
 #include "Chapter1.h"
+#include "Chapter2.h"
+
 
 int main() {
     // close the sync
@@ -6,35 +8,29 @@ int main() {
     clock_t stime, etime;
     stime = clock();
 
-    Chp1 c;
+    // Chp1 c;
+    Chp2 c;
 
-    cout << "Input the matrix's size:" << endl;
-    int size;
-    cin >> size;
-    cout << "Input the matrix's elements:" << endl;
-    int **mat = (int **)malloc(sizeof(int *) * size);
-    for (int r = 0; r < size; ++r) {
-        mat[r] = (int *)malloc(sizeof(int) * size);
-        for (int c = 0; c < size; ++c) {
-            cin >> mat[r][c];
-        }
+    cout << "Input the list:" << endl;
+    ListNode *ahead = new ListNode(), *cur = ahead;
+    int val;
+    while (cin >> val && val != -1) {
+        cur->next = new ListNode(val);
+        cur = cur->next;
     }
 
-    c.setZeros(mat, size);
+    cout << "Input the k: " << endl;
+    int k;
+    cin >> k;
 
-    cout << "After setZeros, the matrix is :" << endl;
-    for (int r = 0; r < size; ++r) {
-        for (int c = 0; c < size; ++c) {
-            cout << mat[r][c];
-            if (c != size - 1) {
-                cout << " ";
-            }
-        }
-        if (r != size - 1) {
-            cout << endl;
-        }
+    ListNode *ret = c.kthToLast(ahead->next, k);
+
+    cout << "The kth element is :" << endl;
+    if (ret != nullptr) {
+        cout << ret->val << endl;
     }
-    free(mat);
+    else {
+        cout << "Ilegal k value" << endl;
 
     // Time
     cout << endl << "-------------------Time Cost-----------------------" << endl;
