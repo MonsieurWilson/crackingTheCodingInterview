@@ -8,8 +8,7 @@ int main() {
     clock_t stime, etime;
     stime = clock();
 
-    // Chp1 c;
-    Chp2 c;
+    Chp3 c;
 
     cout << "Input the list :" << endl;
     ListNode *ahead = new ListNode(), *cur = ahead;
