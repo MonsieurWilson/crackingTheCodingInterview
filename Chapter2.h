@@ -43,7 +43,7 @@ public:
             fast = fast->next;
         }
 
-        while (fast != nullptr) {
+        while (fast) {
             slow = slow->next;
             fast = fast->next;
         }
@@ -91,12 +91,12 @@ public:
         ListNode *ret = new ListNode();
         ListNode *cur = ret;
         int carry = 0;
-        while (l1 != nullptr || l2 != nullptr || carry) {
-            if (l1 != nullptr) {
+        while (l1 || l2 || carry) {
+            if (l1) {
                 carry += l1->val;
                 l1 = l1->next;
             }
-            if (l2 != nullptr) {
+            if (l2) {
                 carry += l2->val;
                 l2 = l2->next;
             }
@@ -106,7 +106,6 @@ public:
                 carry /= 10;
             }
         }
-
         return ret->next;
     }
     /* 找出有环链表的环路开始节点*/

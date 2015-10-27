@@ -1,5 +1,6 @@
 #include "Chapter1.h"
 #include "Chapter2.h"
+#include "Chapter9.h"
 
 
 int main() {
@@ -8,18 +9,10 @@ int main() {
     clock_t stime, etime;
     stime = clock();
 
-    Chp3 c;
-
-    cout << "Input the list :" << endl;
-    ListNode *ahead = new ListNode(), *cur = ahead;
-    int val;
-    while (cin >> val && val != -1) {
-        cur->next = new ListNode(val);
-        cur = cur->next;
+    Chp9 chp;
+    int n;
+    while (cin >> n) {
     }
-
-    bool ret = c.isPalindrome(ahead->next);
-    cout << (ret ? "True" : "False") << endl;
 
 
     // Time
