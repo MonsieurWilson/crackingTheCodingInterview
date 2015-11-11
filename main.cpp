@@ -1,6 +1,7 @@
 #include "Chapter1.h"
 #include "Chapter2.h"
 #include "Chapter9.h"
+#include "Chapter17.h"
 
 
 int main() {
@@ -9,9 +10,10 @@ int main() {
     clock_t stime, etime;
     stime = clock();
 
-    Chp9 chp;
-    int n;
-    while (cin >> n) {
+    Chp17 ch;
+    int a, b;
+    while ((cout << "Input the a and b:" << endl) && (cin >> a >> b)) {
+        cout << ch.getMaxII(a, b) << endl;
     }
 
 
